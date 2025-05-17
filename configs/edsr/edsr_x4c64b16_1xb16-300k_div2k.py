@@ -74,7 +74,7 @@ val_pipeline = [
 
 # dataset settings
 dataset_type = 'BasicImageDataset'
-data_root = 'data'
+data_root = '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/SRCrack_HNS/leftImg8bit'
 
 train_dataloader = dict(
     num_workers=8,
@@ -84,11 +84,11 @@ train_dataloader = dict(
     sampler=dict(type='InfiniteSampler', shuffle=True),
     dataset=dict(
         type=dataset_type,
-        ann_file='meta_info_DIV2K800sub_GT.txt',
+        ann_file='/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/SRCrack_HNS/leftImg8bit/train/meta_info_train.txt',    # Change to my data 
         metainfo=dict(dataset_type='div2k', task_name='sisr'),
-        data_root=data_root + '/DIV2K',
+        data_root=data_root, #Change to my data path
         data_prefix=dict(
-            img='DIV2K_train_LR_bicubic/X4_sub', gt='DIV2K_train_HR_sub'),
+            img='train/LR', gt='train/HR'),
         filename_tmpl=dict(img='{}', gt='{}'),
         pipeline=train_pipeline))
 
@@ -99,9 +99,9 @@ val_dataloader = dict(
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type=dataset_type,
-        metainfo=dict(dataset_type='set5', task_name='sisr'),
-        data_root=data_root + '/Set5',
-        data_prefix=dict(img='LRbicx4', gt='GTmod12'),
+        metainfo=dict(dataset_type='set5', task_name='sisr'),   #Change set5 to dataset_type (ChagGPT says It is mydata_val)
+        data_root=data_root,  #data/my_data
+        data_prefix=dict(img='val/LR', gt='val/HR'),  #img=val_LR, gt=val_HR
         pipeline=val_pipeline))
 
 val_evaluator = dict(
@@ -113,7 +113,7 @@ val_evaluator = dict(
     ])
 
 train_cfg = dict(
-    type='IterBasedTrainLoop', max_iters=300000, val_interval=5000)
+    type='IterBasedTrainLoop', max_iters=120000, val_interval=1000)
 val_cfg = dict(type='MultiValLoop')
 
 # optimizer
