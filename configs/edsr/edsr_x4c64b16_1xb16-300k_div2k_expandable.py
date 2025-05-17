@@ -56,20 +56,7 @@ val_pipeline = [
 
 # 학습 데이터 경로 리스트 (확장 가능)
 train_data_roots = [
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/BR/br_합성전_100개단위/br105_to_finish',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/BR/br_합성전_100개단위/br_19111_01_to_br_19111_104/leftImg8bit',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/BR/br_합성전_100개단위/DJI_P34_P35/leftImg8bit',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/BR/br_합성전_100개단위/DJI_P36_P37/leftImg8bit',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/탄천2고가교',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/배수관',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/1차년도_raw_image',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/2022_현장촬영이미지',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/2022onsiteimgsplit',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/2023현장촬영',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/P4윈드삭고흥-D면가드레일',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/한국도로공사_전북본부_청운구조_와탄천교_P2전면부(목포)',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/한국도로공사_split',
-    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/leakage'
+    '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/DIV2K'
 
     # '/path/to/dataset3', 등 추가 가능
 ]
@@ -106,7 +93,7 @@ val_dataloader = dict(
     dataset=dict(
         type='BasicImageDataset',
         metainfo=dict(dataset_type='mydata_val', task_name='sisr'),
-        data_root='/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/SRData_total',
+        data_root='/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/DIV2K',
         data_prefix=dict(img='val/LR', gt='val/HR'),
         pipeline=val_pipeline
     )

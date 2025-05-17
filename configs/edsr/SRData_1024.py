@@ -1,4 +1,4 @@
-# python configs/edsr/SRData_1024.py --source '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/학습데이터/합성이미지/Joint/hardnegative_합성전/한국도로공사_split/leftImg8bit/train' --output '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/Joint/한국도로공사_split' --split train
+# python configs/edsr/SRData_1024.py --source '/home/user/05. DIV2K/DIV2K_valid_HR' --output '/home/user/WindowsShare/05. Data/04. Raw Images & Archive/206.hardnegative/SuperResolution/DIV2K' --split val
 import os
 import argparse
 from PIL import Image
